@@ -441,8 +441,6 @@ Clang-Format
           ▼                ▼
         GHCR          GitHub Releases
 ```
-```
-
 
 ---
 
