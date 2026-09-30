@@ -6,7 +6,7 @@
 
 ---
 
-## 📚 Проекты
+# 📚 Проекты
 
 |  № | Проект                                                        | Технологии            | Docker | CI/CD |
 | -: | ------------------------------------------------------------- | --------------------- | :----: | :---: |
@@ -177,6 +177,54 @@ GitHub Releases
 * Linux x64
 * macOS ARM64
 * Windows x64
+
+# 🟣 CD 04 — hello-dotnet
+
+🔗 [**Открыть репозиторий**](https://github.com/ArthurAleksandrovitch/hello-dotnet)
+
+C#/.NET-приложение с автоматической сборкой self-contained single-file бинарников для нескольких платформ и публикацией готовых файлов в **GitHub Releases**.
+
+### Основные технологии
+
+- C#
+- .NET 8
+- xUnit
+- GitHub Actions
+- GitHub Releases
+- Cross-platform builds
+- Self-contained deployment
+- PublishSingleFile
+
+### CI
+
+Pipeline выполняет:
+
+- восстановление NuGet-зависимостей;
+- проверку форматирования через `dotnet format`;
+- сборку проекта;
+- запуск unit-тестов.
+
+### CD
+
+После создания Git-тега версии:
+
+```text
+Git Tag
+   ↓
+GitHub Actions
+   ↓
+.NET Build & Test
+   ↓
+dotnet publish
+   ↓
+Self-contained Single-file
+   ↓
+5 Platform Binaries
+   ↓
+GitHub Releases
+   ↓
+📦 Готовые исполняемые файлы
+```
 
 # 🧪 01 — my-first-cicd
 
@@ -375,6 +423,7 @@ PHP
 C++
 Java
 Rust
+C#
 ```
 
 ### DevOps
@@ -400,6 +449,9 @@ Clippy
 Rustfmt
 Clang
 Clang-Format
+.NET CLI
+dotnet format
+xUnit
 ```
 
 ---
@@ -455,7 +507,7 @@ Clang-Format
 * multi-stage builds;
 * минимальные runtime-образы;
 * `.dockerignore`;
-* запуск приложения от непривилегированного пользователя;
+* запуск приложений от непривилегированного пользователя в проектах, где это настроено;
 * автоматическая проверка Docker-образов в CI.
 
 ---
@@ -499,11 +551,13 @@ Artifact / Docker Image / Release
 * создание Docker-образов;
 * multi-stage Docker builds;
 * работа с Docker BuildKit;
-* сохранение артефактов GitHub Actions.
+* сохранение артефактов GitHub Actions;
+* публикация Docker-образов в GHCR;
+* публикация бинарных файлов в GitHub Releases.
 
 ---
 
-# 📊 Проекты и технологии
+# 📊 CI-проекты и технологии
 
 | Проект        | Язык    | Docker | GitHub Actions | Тестирование |
 | ------------- | ------- | :----: | :------------: | :----------: |
