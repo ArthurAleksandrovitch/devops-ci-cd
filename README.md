@@ -10,20 +10,124 @@
 
 |  № | Проект                                                        | Технологии            | Docker | CI/CD |
 | -: | ------------------------------------------------------------- | --------------------- | :----: | :---: |
-| 01 | 🧪 [my-first-cicd](https://github.com/PinkRaze/my-first-cicd) | CI/CD, GitHub Actions |    —   |   ✅   |
-| 02 | 🐍 [my-python-app](https://github.com/PinkRaze/my-python-app) | Python                |    ✅   |   ✅   |
-| 03 | 🟢 [my-node-app](https://github.com/PinkRaze/my-node-app)     | Node.js               |    ✅   |   ✅   |
-| 04 | 🐹 [my-go-app](https://github.com/PinkRaze/my-go-app)         | Go                    |    ✅   |   ✅   |
-| 05 | 🐘 [my-php-app](https://github.com/PinkRaze/my-php-app)       | PHP                   |    ✅   |   ✅   |
-| 06 | ⚙️ [my-cpp-app](https://github.com/PinkRaze/my-cpp-app)       | C++                   |    ✅   |   ✅   |
-| 07 | ☕ [hello-java](https://github.com/PinkRaze/hello-java)        | Java, Maven, JUnit    |    ✅   |   ✅   |
-| 08 | 🦀 [my-rust-app](https://github.com/PinkRaze/my-rust-app)     | Rust, Cargo, Clippy   |    ✅   |   ✅   |
+| 01 | 🧪 [my-first-cicd](https://github.com/ArthurAleksandrovitch/my-first-cicd) | CI/CD, GitHub Actions |    —   |   ✅   |
+| 02 | 🐍 [my-python-app](https://github.com/ArthurAleksandrovitch/my-python-app) | Python                |    ✅   |   ✅   |
+| 03 | 🟢 [my-node-app](https://github.com/ArthurAleksandrovitch/my-node-app)     | Node.js               |    ✅   |   ✅   |
+| 04 | 🐹 [my-go-app](https://github.com/ArthurAleksandrovitch/my-go-app)         | Go                    |    ✅   |   ✅   |
+| 05 | 🐘 [my-php-app](https://github.com/ArthurAleksandrovitch/my-php-app)       | PHP                   |    ✅   |   ✅   |
+| 06 | ⚙️ [my-cpp-app](https://github.com/ArthurAleksandrovitch/my-cpp-app)       | C++                   |    ✅   |   ✅   |
+| 07 | ☕ [hello-java](https://github.com/ArthurAleksandrovitch/hello-java)        | Java, Maven, JUnit    |    ✅   |   ✅   |
+| 08 | 🦀 [my-rust-app](https://github.com/ArthurAleksandrovitch/my-rust-app)     | Rust, Cargo, Clippy   |    ✅   |   ✅   |
+
+# 🚀 CD — Continuous Delivery / Deployment
+
+Проекты, в которых автоматизирована доставка готового приложения или артефактов после успешной сборки и проверки.
+
+|  № | Проект                                                                             | Технологии         |  Способ публикации |
+| -: | ---------------------------------------------------------------------------------- | ------------------ | :----------------: |
+| 01 | 🦀 [hello-rust](https://github.com/ArthurAleksandrovitch/hello-rust)               | Rust, Docker, GHCR |       📦 GHCR      |
+| 02 | 🐹 [hello-go-releases](https://github.com/ArthurAleksandrovitch/hello-go-releases) | Go, GitHub Actions | 📦 GitHub Releases |
 
 ---
 
+# 🦀 CD 01 — hello-rust
+
+🔗 **[Открыть репозиторий](https://github.com/ArthurAleksandrovitch/hello-rust)**
+
+Rust-приложение с автоматической сборкой Docker-образа и публикацией контейнера в **GitHub Container Registry (GHCR)**.
+
+### Основные технологии
+
+* Rust
+* Cargo
+* Rustfmt
+* Clippy
+* Docker
+* Docker Buildx
+* GitHub Actions
+* GitHub Container Registry (GHCR)
+
+### CI
+
+Pipeline выполняет:
+
+* проверку форматирования через Rustfmt;
+* статический анализ через Clippy;
+* запуск unit- и integration-тестов;
+* release-сборку Rust-приложения.
+
+### CD
+
+После успешного выполнения CI на ветке `main`:
+
+```text
+GitHub
+   ↓
+GitHub Actions
+   ↓
+Rust Build & Test
+   ↓
+Docker Build
+   ↓
+GHCR
+   ↓
+📦 ghcr.io/arthuraleksandrovitch/hello-rust
+```
+
+Docker-образ автоматически публикуется в **GitHub Container Registry** и может быть получен командой:
+
+```bash
+docker pull ghcr.io/arthuraleksandrovitch/hello-rust:latest
+```
+
+---
+
+# 🐹 CD 02 — hello-go-releases
+
+🔗 **[Открыть репозиторий](https://github.com/ArthurAleksandrovitch/hello-go-releases)**
+
+Go-приложение с автоматической сборкой бинарников для нескольких платформ и публикацией готовых файлов в **GitHub Releases**.
+
+### Основные технологии
+
+* Go
+* Go Modules
+* GitHub Actions
+* GitHub Releases
+* Cross-platform builds
+
+### CI
+
+Pipeline выполняет:
+
+* проверку форматирования;
+* статический анализ;
+* запуск тестов;
+* сборку приложения.
+
+### CD
+
+После создания Git-тега версии:
+
+```text
+Git Tag
+   ↓
+GitHub Actions
+   ↓
+Go Build
+   ↓
+Cross-platform binaries
+   ↓
+GitHub Releases
+   ↓
+📦 Готовые бинарники
+```
+
+В релизе `v1.0.0` публикуются готовые бинарники для нескольких платформ.
+
 # 🧪 01 — my-first-cicd
 
-🔗 **[Открыть репозиторий](https://github.com/PinkRaze/my-first-cicd)**
+🔗 **[Открыть репозиторий](https://github.com/ArthurAleksandrovitch/my-first-cicd)**
 
 Один из первых учебных проектов для знакомства с принципами **CI/CD и GitHub Actions**.
 
@@ -38,7 +142,7 @@
 
 # 🐍 02 — my-python-app
 
-🔗 **[Открыть репозиторий](https://github.com/PinkRaze/my-python-app)**
+🔗 **[Открыть репозиторий](https://github.com/ArthurAleksandrovitch/my-python-app)**
 
 Учебное Python-приложение с автоматизированной сборкой и проверками.
 
@@ -56,7 +160,7 @@ Pipeline автоматизирует проверку и сборку прое�
 
 # 🟢 03 — my-node-app
 
-🔗 **[Открыть репозиторий](https://github.com/PinkRaze/my-node-app)**
+🔗 **[Открыть репозиторий](https://github.com/ArthurAleksandrovitch/my-node-app)**
 
 Node.js-приложение, контейнеризированное с помощью Docker.
 
@@ -75,7 +179,7 @@ Node.js-приложение, контейнеризированное с пом
 
 # 🐹 04 — my-go-app
 
-🔗 **[Открыть репозиторий](https://github.com/PinkRaze/my-go-app)**
+🔗 **[Открыть репозиторий](https://github.com/ArthurAleksandrovitch/my-go-app)**
 
 Учебное приложение на языке Go с автоматизированной сборкой.
 
@@ -94,7 +198,7 @@ Pipeline выполняет автоматическую сборку и про�
 
 # 🐘 05 — my-php-app
 
-🔗 **[Открыть репозиторий](https://github.com/PinkRaze/my-php-app)**
+🔗 **[Открыть репозиторий](https://github.com/ArthurAleksandrovitch/my-php-app)**
 
 PHP-приложение, запускаемое внутри Docker-контейнера.
 
@@ -112,7 +216,7 @@ PHP-приложение, запускаемое внутри Docker-конте�
 
 # ⚙️ 06 — my-cpp-app
 
-🔗 **[Открыть репозиторий](https://github.com/PinkRaze/my-cpp-app)**
+🔗 **[Открыть репозиторий](https://github.com/ArthurAleksandrovitch/my-cpp-app)**
 
 C++ приложение с автоматическим форматированием, сборкой и контейнеризацией.
 
@@ -137,7 +241,7 @@ Pipeline включает:
 
 # ☕ 07 — hello-java
 
-🔗 **[Открыть репозиторий](https://github.com/PinkRaze/hello-java)**
+🔗 **[Открыть репозиторий](https://github.com/ArthurAleksandrovitch/hello-java)**
 
 Java-приложение с Maven, JUnit 5 и multi-stage Docker-сборкой.
 
@@ -165,7 +269,7 @@ Pipeline выполняет:
 
 # 🦀 08 — my-rust-app
 
-🔗 **[Открыть репозиторий](ё)**
+🔗 **[Открыть репозиторий](https://github.com/ArthurAleksandrovitch/my-rust-app)**
 
 Rust-приложение с проверкой форматирования, статическим анализом, тестированием и Docker-сборкой.
 
@@ -359,9 +463,9 @@ Artifact
 
 # 👨‍💻 Автор
 
-**Артур Любин Александрович (PinkRaze)**
+**Артур Любин Александрович (ArthurAleksandrovitch)**
 
-🔗 [GitHub](https://github.com/PinkRaze)
+🔗 [GitHub](https://github.com/ArthurAleksandrovitch)
 
 ---
 
