@@ -27,7 +27,7 @@
 | -: | ---------------------------------------------------------------------------------- | ------------------ | :----------------: |
 | 01 | 🦀 [hello-rust](https://github.com/ArthurAleksandrovitch/hello-rust)               | Rust, Docker, GHCR |       📦 GHCR      |
 | 02 | 🐹 [hello-go-releases](https://github.com/ArthurAleksandrovitch/hello-go-releases) | Go, GitHub Actions | 📦 GitHub Releases |
-
+| 03 | 🐍 [hello-python](https://github.com/ArthurAleksandrovitch/hello-python) | Python, PyInstaller, GitHub Actions | 📦 GitHub Releases |
 ---
 
 # 🦀 CD 01 — hello-rust
