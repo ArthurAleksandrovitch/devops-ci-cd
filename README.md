@@ -476,11 +476,9 @@ Build
    ↓
 Test
    ↓
-Docker Build
+Delivery
    ↓
-Docker Test
-   ↓
-Artifact
+Artifact / Docker Image / Release
 ```
 
 ---
