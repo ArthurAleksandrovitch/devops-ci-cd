@@ -30,6 +30,7 @@
 | 03    | 🐍 [hello-python](https://github.com/ArthurAleksandrovitch/hello-python)           | Python, PyInstaller, GitHub Actions | 📦 GitHub Releases    |
 | 04    | 🟣 [hello-dotnet](https://github.com/ArthurAleksandrovitch/hello-dotnet)           | C#, .NET 8, GitHub Actions          | 📦 GitHub Releases    |
 | 05    | 🖥️ [hello-gui](https://github.com/ArthurAleksandrovitch/hello-gui)                | Go, Fyne, CGO, GitHub Actions       | 📦 GitHub Releases    |
+| 06    | 🖥️ [hex-loader](https://github.com/ArthurAleksandrovitch/hex-loader)              | Go, Fyne, CGO, Arduino CLI          | 📦 GitHub Releases    |
 
 ---
 
@@ -306,6 +307,61 @@ GitHub Releases
 
 * `v0.1.0`
 * `v0.2.0`
+
+---
+
+# 🖥️ CD 06 — hex-loader
+
+🔗 [**Открыть репозиторий**](https://github.com/ArthurAleksandrovitch/hex-loader)
+
+Графическое приложение на **Go + Fyne** для загрузки HEX-файлов в платы Arduino.
+
+Проект использует GitHub Actions для автоматической проверки и сборки приложения, а готовый результат публикуется в **GitHub Releases**.
+
+### Основные технологии
+
+* Go
+* Fyne
+* CGO
+* Arduino CLI
+* GitHub Actions
+* GitHub Releases
+* MSYS2 / MinGW-w64
+
+### CI
+
+Pipeline выполняет:
+
+* настройку Go;
+* установку системных зависимостей Fyne;
+* проверку форматирования через `gofmt`;
+* загрузку зависимостей;
+* сборку приложения;
+* сохранение результата сборки как GitHub Actions Artifact.
+
+### CD
+
+После создания Git-тега версии:
+
+```text
+Git Tag
+   ↓
+GitHub Actions
+   ↓
+Go Build
+   ↓
+Fyne / CGO
+   ↓
+GitHub Releases
+   ↓
+📦 Готовый бинарник
+```
+
+В проекте опубликован релиз:
+
+* `v1.0.1`
+
+Готовый бинарник доступен в **GitHub Releases**.
 
 ---
 
@@ -635,7 +691,7 @@ Delivery
 Artifact / Docker Image / Release
 ```
 
-Для GUI-проекта `hello-gui` дополнительно используются:
+Для GUI-проектов дополнительно могут использоваться:
 
 ```text
 CGO
@@ -698,6 +754,7 @@ Linux / macOS / Windows
 | hello-python      | Linux / Windows / macOS               | GitHub Releases |
 | hello-dotnet      | 5 platform binaries                   | GitHub Releases |
 | hello-gui         | Linux x64 / Windows x64 / macOS ARM64 | GitHub Releases |
+| hex-loader        | Linux binary                          | GitHub Releases |
 
 ---
 
