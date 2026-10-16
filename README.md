@@ -359,9 +359,9 @@ GitHub Releases
 
 В проекте опубликован релиз:
 
-* `v1.0.1`
+* `v1.0.2`
 
-Готовый бинарник доступен в **GitHub Releases**.
+Готовые бинарники для Linux, Windows и macOS доступны в **GitHub Releases**.
 
 ---
 
@@ -754,7 +754,7 @@ Linux / macOS / Windows
 | hello-python      | Linux / Windows / macOS               | GitHub Releases |
 | hello-dotnet      | 5 platform binaries                   | GitHub Releases |
 | hello-gui         | Linux x64 / Windows x64 / macOS ARM64 | GitHub Releases |
-| hex-loader        | Linux binary                          | GitHub Releases |
+| hex-loader        | Linux x64 / Windows x64 / macOS ARM64 | GitHub Releases |
 
 ---
 
