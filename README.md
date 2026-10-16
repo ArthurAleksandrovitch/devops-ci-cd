@@ -1,70 +1,50 @@
-# 🚀 DevOps CI/CD — Учебные проекты
-
-Коллекция учебных проектов по **DevOps, CI/CD, Docker, GitHub Actions и автоматизации сборки приложений**.
-
+🚀 DevOps CI/CD — Учебные проекты
+Коллекция учебных проектов по DevOps, CI/CD, Docker, GitHub Actions и автоматизации сборки приложений.
 В каждом проекте настроены собственные процессы сборки, проверки и автоматизации доставки приложений.
+📚 Проекты
+№	Проект	Технологии	Docker	CI/CD
+01	🧪 my-first-cicd	CI/CD, GitHub Actions	—	✅
+02	🐍 my-python-app	Python	✅	✅
+03	🟢 my-node-app	Node.js	✅	✅
+04	🐹 my-go-app	Go	✅	✅
+05	🐘 my-php-app	PHP	✅	✅
+06	⚙️ my-cpp-app	C++	✅	✅
+07	☕ hello-java	Java, Maven, JUnit	✅	✅
+08	🦀 my-rust-app	Rust, Cargo, Clippy	✅	✅
 
----
 
-# 📚 Проекты
-
-| **№** | **Проект**                                                                 | **Технологии**        | **Docker** | **CI/CD** |
-| ----- | -------------------------------------------------------------------------- | --------------------- | ---------- | --------- |
-| 01    | 🧪 [my-first-cicd](https://github.com/ArthurAleksandrovitch/my-first-cicd) | CI/CD, GitHub Actions | —          | ✅         |
-| 02    | 🐍 [my-python-app](https://github.com/ArthurAleksandrovitch/my-python-app) | Python                | ✅          | ✅         |
-| 03    | 🟢 [my-node-app](https://github.com/ArthurAleksandrovitch/my-node-app)     | Node.js               | ✅          | ✅         |
-| 04    | 🐹 [my-go-app](https://github.com/ArthurAleksandrovitch/my-go-app)         | Go                    | ✅          | ✅         |
-| 05    | 🐘 [my-php-app](https://github.com/ArthurAleksandrovitch/my-php-app)       | PHP                   | ✅          | ✅         |
-| 06    | ⚙️ [my-cpp-app](https://github.com/ArthurAleksandrovitch/my-cpp-app)       | C++                   | ✅          | ✅         |
-| 07    | ☕ [hello-java](https://github.com/ArthurAleksandrovitch/hello-java)        | Java, Maven, JUnit    | ✅          | ✅         |
-| 08    | 🦀 [my-rust-app](https://github.com/ArthurAleksandrovitch/my-rust-app)     | Rust, Cargo, Clippy   | ✅          | ✅         |
-
-# 🚀 CD — Continuous Delivery / Deployment
-
+🚀 CD — Continuous Delivery / Deployment
 Проекты, в которых автоматизирована доставка готового приложения или артефактов после успешной сборки и проверки.
+№	Проект	Технологии	Способ публикации
+01	🦀 hello-rust	Rust, Docker, GHCR	📦 GHCR
+02	🐹 hello-go-releases	Go, GitHub Actions	📦 GitHub Releases
+03	🐍 hello-python	Python, PyInstaller, GitHub Actions	📦 GitHub Releases
+04	🟣 hello-dotnet	C#, .NET 8, GitHub Actions	📦 GitHub Releases
+05	🖥️ hello-gui	Go, Fyne, CGO, GitHub Actions	📦 GitHub Releases
+06	🖥️ hex-loader	Go, Fyne, CGO, Arduino CLI	📦 GitHub Releases
+07	🖥️ arduino-manager	Go, Fyne, CGO, GitHub Actions	📦 GitHub Releases
 
-| **№** | **Проект**                                                                         | **Технологии**                      | **Способ публикации** |
-| ----- | ---------------------------------------------------------------------------------- | ----------------------------------- | --------------------- |
-| 01    | 🦀 [hello-rust](https://github.com/ArthurAleksandrovitch/hello-rust)               | Rust, Docker, GHCR                  | 📦 GHCR               |
-| 02    | 🐹 [hello-go-releases](https://github.com/ArthurAleksandrovitch/hello-go-releases) | Go, GitHub Actions                  | 📦 GitHub Releases    |
-| 03    | 🐍 [hello-python](https://github.com/ArthurAleksandrovitch/hello-python)           | Python, PyInstaller, GitHub Actions | 📦 GitHub Releases    |
-| 04    | 🟣 [hello-dotnet](https://github.com/ArthurAleksandrovitch/hello-dotnet)           | C#, .NET 8, GitHub Actions          | 📦 GitHub Releases    |
-| 05    | 🖥️ [hello-gui](https://github.com/ArthurAleksandrovitch/hello-gui)                | Go, Fyne, CGO, GitHub Actions       | 📦 GitHub Releases    |
-| 06    | 🖥️ [hex-loader](https://github.com/ArthurAleksandrovitch/hex-loader)              | Go, Fyne, CGO, Arduino CLI          | 📦 GitHub Releases    |
 
----
-
-# 🦀 CD 01 — hello-rust
-
-🔗 [**Открыть репозиторий**](https://github.com/ArthurAleksandrovitch/hello-rust)
-
-Rust-приложение с автоматической сборкой Docker-образа и публикацией контейнера в **GitHub Container Registry (GHCR)**.
-
-### Основные технологии
-
-* Rust
-* Cargo
-* Rustfmt
-* Clippy
-* Docker
-* Docker Buildx
-* GitHub Actions
-* GitHub Container Registry (GHCR)
-
-### CI
-
+🦀 CD 01 — hello-rust
+🔗 Открыть репозиторий
+Rust-приложение с автоматической сборкой Docker-образа и публикацией контейнера в GitHub Container Registry (GHCR).
+Основные технологии
+- Rust
+- Cargo
+- Rustfmt
+- Clippy
+- Docker
+- Docker Buildx
+- GitHub Actions
+- GitHub Container Registry (GHCR)
+CI
 Pipeline выполняет:
-
-* проверку форматирования через Rustfmt;
-* статический анализ через Clippy;
-* запуск unit- и integration-тестов;
-* release-сборку Rust-приложения.
-
-### CD
-
-После успешного выполнения CI на ветке `main`:
-
-```text
+- проверку форматирования через Rustfmt;
+- статический анализ через Clippy;
+- запуск unit- и integration-тестов;
+- release-сборку Rust-приложения.
+CD
+После успешного выполнения CI на ветке main:
 GitHub
    ↓
 GitHub Actions
@@ -76,44 +56,25 @@ Docker Build
 GHCR
    ↓
 📦 ghcr.io/arthuraleksandrovitch/hello-rust
-```
-
-Docker-образ автоматически публикуется в **GitHub Container Registry** и может быть получен командой:
-
-```bash
+Docker-образ автоматически публикуется в GitHub Container Registry и может быть получен командой:
 docker pull ghcr.io/arthuraleksandrovitch/hello-rust:latest
-```
-
----
-
-# 🐹 CD 02 — hello-go-releases
-
-🔗 [**Открыть репозиторий**](https://github.com/ArthurAleksandrovitch/hello-go-releases)
-
-Go-приложение с автоматической сборкой бинарников для нескольких платформ и публикацией готовых файлов в **GitHub Releases**.
-
-### Основные технологии
-
-* Go
-* Go Modules
-* GitHub Actions
-* GitHub Releases
-* Cross-platform builds
-
-### CI
-
+🐹 CD 02 — hello-go-releases
+🔗 Открыть репозиторий
+Go-приложение с автоматической сборкой бинарников для нескольких платформ и публикацией готовых файлов в GitHub Releases.
+Основные технологии
+- Go
+- Go Modules
+- GitHub Actions
+- GitHub Releases
+- Cross-platform builds
+CI
 Pipeline выполняет:
-
-* проверку форматирования;
-* статический анализ;
-* запуск тестов;
-* сборку приложения.
-
-### CD
-
+- проверку форматирования;
+- статический анализ;
+- запуск тестов;
+- сборку приложения.
+CD
 После создания Git-тега версии:
-
-```text
 Git Tag
    ↓
 GitHub Actions
@@ -125,41 +86,25 @@ Cross-platform binaries
 GitHub Releases
    ↓
 📦 Готовые бинарники
-```
-
 В релизах проекта публикуются готовые бинарники для нескольких платформ.
-
----
-
-# 🐍 CD 03 — hello-python
-
-🔗 [**Открыть репозиторий**](https://github.com/ArthurAleksandrovitch/hello-python)
-
-Python-приложение с автоматической сборкой standalone-бинарников с помощью **PyInstaller** и публикацией готовых файлов в **GitHub Releases**.
-
-### Основные технологии
-
-* Python 3.12
-* PyInstaller
-* pytest
-* Ruff
-* GitHub Actions
-* GitHub Releases
-
-### CI
-
+🐍 CD 03 — hello-python
+🔗 Открыть репозиторий
+Python-приложение с автоматической сборкой standalone-бинарников с помощью PyInstaller и публикацией готовых файлов в GitHub Releases.
+Основные технологии
+- Python 3.12
+- PyInstaller
+- pytest
+- Ruff
+- GitHub Actions
+- GitHub Releases
+CI
 Pipeline выполняет:
-
-* проверку качества кода через Ruff;
-* проверку форматирования;
-* запуск unit-тестов;
-* сборку приложения через PyInstaller.
-
-### CD
-
+- проверку качества кода через Ruff;
+- проверку форматирования;
+- запуск unit-тестов;
+- сборку приложения через PyInstaller.
+CD
 После создания Git-тега версии:
-
-```text
 Git Tag
    ↓
 GitHub Actions
@@ -175,47 +120,30 @@ Platform Binaries
 GitHub Releases
    ↓
 📦 Готовые исполняемые файлы
-```
-
-Для релиза `v0.2.0` публикуются готовые бинарники для:
-
-* Linux x64
-* macOS ARM64
-* Windows x64
-
----
-
-# 🟣 CD 04 — hello-dotnet
-
-🔗 [**Открыть репозиторий**](https://github.com/ArthurAleksandrovitch/hello-dotnet)
-
-C#/.NET-приложение с автоматической сборкой self-contained single-file бинарников для нескольких платформ и публикацией готовых файлов в **GitHub Releases**.
-
-### Основные технологии
-
-* C#
-* .NET 8
-* xUnit
-* GitHub Actions
-* GitHub Releases
-* Cross-platform builds
-* Self-contained deployment
-* PublishSingleFile
-
-### CI
-
+Для релиза v0.2.0 публикуются готовые бинарники для:
+- Linux x64
+- macOS ARM64
+- Windows x64
+🟣 CD 04 — hello-dotnet
+🔗 Открыть репозиторий
+C#/.NET-приложение с автоматической сборкой self-contained single-file бинарников для нескольких платформ и публикацией готовых файлов в GitHub Releases.
+Основные технологии
+- C#
+- .NET 8
+- xUnit
+- GitHub Actions
+- GitHub Releases
+- Cross-platform builds
+- Self-contained deployment
+- PublishSingleFile
+CI
 Pipeline выполняет:
-
-* восстановление NuGet-зависимостей;
-* проверку форматирования через `dotnet format`;
-* сборку проекта;
-* запуск unit-тестов.
-
-### CD
-
+- восстановление NuGet-зависимостей;
+- проверку форматирования через dotnet format;
+- сборку проекта;
+- запуск unit-тестов.
+CD
 После создания Git-тега версии:
-
-```text
 Git Tag
    ↓
 GitHub Actions
@@ -231,46 +159,30 @@ Self-contained Single-file
 GitHub Releases
    ↓
 📦 Готовые исполняемые файлы
-```
-
----
-
-# 🖥️ CD 05 — hello-gui
-
-🔗 [**Открыть репозиторий**](https://github.com/ArthurAleksandrovitch/hello-gui)
-
-Go GUI-приложение на **Fyne** с автоматической сборкой нативных бинарников для Linux, macOS и Windows и публикацией готовых файлов в **GitHub Releases**.
-
-Проект демонстрирует CI/CD для GUI-приложений, где требуется **CGO** и платформенные зависимости для графического интерфейса.
-
-### Основные технологии
-
-* Go 1.23
-* Fyne
-* CGO
-* GitHub Actions
-* GitHub Releases
-* Cross-platform builds
-* Linux GUI dependencies
-* MSYS2 / MinGW-w64
-* Native GUI builds
-
-### CI
-
+🖥️ CD 05 — hello-gui
+🔗 Открыть репозиторий
+Go GUI-приложение на Fyne с автоматической сборкой нативных бинарников для Linux, macOS и Windows и публикацией готовых файлов в GitHub Releases.
+Проект демонстрирует CI/CD для GUI-приложений, где требуется CGO и платформенные зависимости для графического интерфейса.
+Основные технологии
+- Go 1.23
+- Fyne
+- CGO
+- GitHub Actions
+- GitHub Releases
+- Cross-platform builds
+- Linux GUI dependencies
+- MSYS2 / MinGW-w64
+- Native GUI builds
+CI
 Pipeline выполняет:
-
-* настройку Go;
-* установку Linux GUI-зависимостей;
-* проверку форматирования через `gofmt`;
-* статический анализ через `go vet`;
-* запуск unit-тестов;
-* smoke build приложения.
-
-### CD
-
+- настройку Go;
+- установку Linux GUI-зависимостей;
+- проверку форматирования через gofmt;
+- статический анализ через go vet;
+- запуск unit-тестов;
+- smoke build приложения.
+CD
 После создания Git-тега версии:
-
-```text
 Git Tag
    ↓
 GitHub Actions
@@ -287,63 +199,38 @@ Platform Builds
 GitHub Releases
    ↓
 📦 Готовые GUI-бинарники
-```
-
 Для релизов проекта публикуются готовые бинарники для:
-
-* Linux x64
-* macOS ARM64
-* Windows x64
-
+- Linux x64
+- macOS ARM64
+- Windows x64
 Версия приложения передаётся во время сборки из Git-тега через:
-
-```text
 -X main.version=${{ github.ref_name }}
-```
-
 Поэтому исходный код не требует изменения версии перед каждым релизом.
-
 В проекте опубликованы релизы:
-
-* `v0.1.0`
-* `v0.2.0`
-
----
-
-# 🖥️ CD 06 — hex-loader
-
-🔗 [**Открыть репозиторий**](https://github.com/ArthurAleksandrovitch/hex-loader)
-
-Графическое приложение на **Go + Fyne** для загрузки HEX-файлов в платы Arduino.
-
-Проект использует GitHub Actions для автоматической проверки и сборки приложения, а готовый результат публикуется в **GitHub Releases**.
-
-### Основные технологии
-
-* Go
-* Fyne
-* CGO
-* Arduino CLI
-* GitHub Actions
-* GitHub Releases
-* MSYS2 / MinGW-w64
-
-### CI
-
+- v0.1.0
+- v0.2.0
+🖥️ CD 06 — hex-loader
+🔗 Открыть репозиторий
+Графическое приложение на Go + Fyne для загрузки HEX-файлов в платы Arduino.
+Проект использует GitHub Actions для автоматической проверки и сборки приложения, а готовый результат публикуется в GitHub Releases.
+Основные технологии
+- Go
+- Fyne
+- CGO
+- Arduino CLI
+- GitHub Actions
+- GitHub Releases
+- MSYS2 / MinGW-w64
+CI
 Pipeline выполняет:
-
-* настройку Go;
-* установку системных зависимостей Fyne;
-* проверку форматирования через `gofmt`;
-* загрузку зависимостей;
-* сборку приложения;
-* сохранение результата сборки как GitHub Actions Artifact.
-
-### CD
-
+- настройку Go;
+- установку системных зависимостей Fyne;
+- проверку форматирования через gofmt;
+- загрузку зависимостей;
+- сборку приложения;
+- сохранение результата сборки как GitHub Actions Artifact.
+CD
 После создания Git-тега версии:
-
-```text
 Git Tag
    ↓
 GitHub Actions
@@ -355,178 +242,138 @@ Fyne / CGO
 GitHub Releases
    ↓
 📦 Готовый бинарник
-```
-
 В проекте опубликован релиз:
-
-* `v1.0.2`
-
-Готовые бинарники для Linux, Windows и macOS доступны в **GitHub Releases**.
-
----
-
-# 🧪 01 — my-first-cicd
-
-🔗 [**Открыть репозиторий**](https://github.com/ArthurAleksandrovitch/my-first-cicd)
-
-Один из первых учебных проектов для знакомства с принципами **CI/CD и GitHub Actions**.
-
-### Основные технологии
-
-* Git
-* GitHub
-* GitHub Actions
-* CI/CD
-
----
-
-# 🐍 02 — my-python-app
-
-🔗 [**Открыть репозиторий**](https://github.com/ArthurAleksandrovitch/my-python-app)
-
-Учебное Python-приложение с автоматизированной сборкой и проверками.
-
-### Основные технологии
-
-* Python
-* Docker
-* GitHub Actions
-
-### CI
-
-Pipeline автоматизирует проверку и сборку проекта.
-
----
-
-# 🟢 03 — my-node-app
-
-🔗 [**Открыть репозиторий**](https://github.com/ArthurAleksandrovitch/my-node-app)
-
-Node.js-приложение, контейнеризированное с помощью Docker.
-
-### Основные технологии
-
-* Node.js
-* npm
-* Docker
-* GitHub Actions
-
-### CI
-
-Автоматическая установка зависимостей, проверка проекта и сборка Docker-образа.
-
----
-
-# 🐹 04 — my-go-app
-
-🔗 [**Открыть репозиторий**](https://github.com/ArthurAleksandrovitch/my-go-app)
-
-Учебное приложение на языке Go с автоматизированной сборкой.
-
-### Основные технологии
-
-* Go
-* Go Modules
-* Docker
-* GitHub Actions
-
-### CI
-
-Pipeline выполняет автоматическую сборку и проверку приложения.
-
----
-
-# 🐘 05 — my-php-app
-
-🔗 [**Открыть репозиторий**](https://github.com/ArthurAleksandrovitch/my-php-app)
-
-PHP-приложение, запускаемое внутри Docker-контейнера.
-
-### Основные технологии
-
-* PHP
-* Docker
-* GitHub Actions
-
-### CI
-
-Автоматическая проверка проекта и сборка Docker-образа.
-
----
-
-# ⚙️ 06 — my-cpp-app
-
-🔗 [**Открыть репозиторий**](https://github.com/ArthurAleksandrovitch/my-cpp-app)
-
-C++ приложение с автоматическим форматированием, сборкой и контейнеризацией.
-
-### Основные технологии
-
-* C++
-* Clang
-* Clang-Format
-* Docker
-* GitHub Actions
-
-### CI
-
-Pipeline включает:
-
-* проверку форматирования;
-* сборку проекта;
-* тестирование;
-* сборку Docker-образа.
-
----
-
-# ☕ 07 — hello-java
-
-🔗 [**Открыть репозиторий**](https://github.com/ArthurAleksandrovitch/hello-java)
-
-Java-приложение с Maven, JUnit 5 и multi-stage Docker-сборкой.
-
-### Основные технологии
-
-* Java 17
-* Maven
-* JUnit 5
-* Maven Shade Plugin
-* Docker
-* GitHub Actions
-
-### CI
-
+- v1.0.2
+Готовые бинарники для Linux, Windows и macOS доступны в GitHub Releases.
+🖥️ CD 07 — arduino-manager
+🔗 Открыть репозиторий
+Графическое приложение Arduino Manager GUI на Go + Fyne для управления библиотеками и платами Arduino.
+Проект использует GitHub Actions для автоматической сборки приложения и публикации готового Windows-бинарника в GitHub Releases.
+Основные технологии
+- Go
+- Go Modules
+- Fyne v2.8.0
+- CGO
+- MSYS2 / MinGW-w64
+- GitHub Actions
+- GitHub Releases
+CI
 Pipeline выполняет:
-
-* настройку JDK 17;
-* кэширование Maven-зависимостей;
-* сборку проекта;
-* запуск тестов;
-* проверку Maven lifecycle;
-* сборку Docker-образа.
-
----
-
-# 🦀 08 — my-rust-app
-
-🔗 [**Открыть репозиторий**](https://github.com/ArthurAleksandrovitch/my-rust-app)
-
+- получение исходного кода;
+- настройку Go;
+- установку GCC через MSYS2;
+- сборку графического приложения;
+- сохранение собранного бинарника как GitHub Actions Artifact.
+CD
+После создания Git-тега версии:
+Git Tag
+   ↓
+GitHub Actions
+   ↓
+Go + Fyne Build
+   ↓
+CGO / GCC
+   ↓
+Windows x64 Binary
+   ↓
+GitHub Releases
+   ↓
+📦 arduino-manager-windows-amd64.exe
+В проекте опубликован релиз:
+- v1.0.0
+🔗 GitHub Actions
+🔗 GitHub Releases
+🧪 01 — my-first-cicd
+🔗 Открыть репозиторий
+Один из первых учебных проектов для знакомства с принципами CI/CD и GitHub Actions.
+Основные технологии
+- Git
+- GitHub
+- GitHub Actions
+- CI/CD
+🐍 02 — my-python-app
+🔗 Открыть репозиторий
+Учебное Python-приложение с автоматизированной сборкой и проверками.
+Основные технологии
+- Python
+- Docker
+- GitHub Actions
+CI
+Pipeline автоматизирует проверку и сборку проекта.
+🟢 03 — my-node-app
+🔗 Открыть репозиторий
+Node.js-приложение, контейнеризированное с помощью Docker.
+Основные технологии
+- Node.js
+- npm
+- Docker
+- GitHub Actions
+CI
+Автоматическая установка зависимостей, проверка проекта и сборка Docker-образа.
+🐹 04 — my-go-app
+🔗 Открыть репозиторий
+Учебное приложение на языке Go с автоматизированной сборкой.
+Основные технологии
+- Go
+- Go Modules
+- Docker
+- GitHub Actions
+CI
+Pipeline выполняет автоматическую сборку и проверку приложения.
+🐘 05 — my-php-app
+🔗 Открыть репозиторий
+PHP-приложение, запускаемое внутри Docker-контейнера.
+Основные технологии
+- PHP
+- Docker
+- GitHub Actions
+CI
+Автоматическая проверка проекта и сборка Docker-образа.
+⚙️ 06 — my-cpp-app
+🔗 Открыть репозиторий
+C++ приложение с автоматическим форматированием, сборкой и контейнеризацией.
+Основные технологии
+- C++
+- Clang
+- Clang-Format
+- Docker
+- GitHub Actions
+CI
+Pipeline включает:
+- проверку форматирования;
+- сборку проекта;
+- тестирование;
+- сборку Docker-образа.
+☕ 07 — hello-java
+🔗 Открыть репозиторий
+Java-приложение с Maven, JUnit 5 и multi-stage Docker-сборкой.
+Основные технологии
+- Java 17
+- Maven
+- JUnit 5
+- Maven Shade Plugin
+- Docker
+- GitHub Actions
+CI
+Pipeline выполняет:
+- настройку JDK 17;
+- кэширование Maven-зависимостей;
+- сборку проекта;
+- запуск тестов;
+- проверку Maven lifecycle;
+- сборку Docker-образа.
+🦀 08 — my-rust-app
+🔗 Открыть репозиторий
 Rust-приложение с проверкой форматирования, статическим анализом, тестированием и Docker-сборкой.
-
-### Основные технологии
-
-* Rust
-* Cargo
-* Rustfmt
-* Clippy
-* Docker
-* GitHub Actions
-
-### CI
-
+Основные технологии
+- Rust
+- Cargo
+- Rustfmt
+- Clippy
+- Docker
+- GitHub Actions
+CI
 Pipeline состоит из следующих этапов:
-
-```text
 ┌─────────────────────┐
 │   Lint & Format     │
 │ Rustfmt + Clippy    │
@@ -546,15 +393,8 @@ Pipeline состоит из следующих этапов:
 │ Test Container      │
 │ Upload Artifact     │
 └─────────────────────┘
-```
-
----
-
-# 🛠️ Используемые технологии
-
-### Languages
-
-```text
+🛠️ Используемые технологии
+Languages
 Python
 JavaScript / Node.js
 Go
@@ -563,22 +403,14 @@ C++
 Java
 Rust
 C#
-```
-
-### DevOps
-
-```text
+DevOps
 Git
 GitHub
 GitHub Actions
 Docker
 Docker BuildKit
 CI/CD
-```
-
-### Build & Test
-
-```text
+Build & Test
 npm
 Go Modules
 Fyne
@@ -598,24 +430,13 @@ Ruff
 PyInstaller
 MSYS2
 MinGW-w64
-```
-
-### Delivery
-
-```text
+Delivery
 GitHub Actions Artifacts
 GitHub Container Registry
 GitHub Releases
 Cross-platform binaries
-```
-
----
-
-# 🔄 Общая схема CI/CD
-
+🔄 Общая схема CI/CD
 Большинство проектов используют следующий подход:
-
-```text
           👨‍💻 Разработка
                  │
                  ▼
@@ -648,34 +469,19 @@ Cross-platform binaries
           │                │
           ▼                ▼
         GHCR          GitHub Releases
-```
-
----
-
-# 📦 Контейнеризация
-
+📦 Контейнеризация
 В Docker-проектах используются Dockerfile для создания воспроизводимого окружения.
-
 В зависимости от проекта применяются:
-
-* обычная Docker-сборка;
-* multi-stage builds;
-* минимальные runtime-образы;
-* `.dockerignore`;
-* запуск приложений от непривилегированного пользователя в проектах, где это настроено;
-* автоматическая проверка Docker-образов в CI.
-
-GUI-проект `hello-gui` не использует Docker для публикации готового приложения. Для локальной проверки Go-зависимостей и Linux-сборки используется отдельный `Dockerfile.test`.
-
----
-
-# ⚙️ GitHub Actions
-
+- обычная Docker-сборка;
+- multi-stage builds;
+- минимальные runtime-образы;
+- .dockerignore;
+- запуск приложений от непривилегированного пользователя в проектах, где это настроено;
+- автоматическая проверка Docker-образов в CI.
+GUI-проект hello-gui не использует Docker для публикации готового приложения. Для локальной проверки Go-зависимостей и Linux-сборки используется отдельный Dockerfile.test.
+⚙️ GitHub Actions
 GitHub Actions используется для автоматизации процессов разработки.
-
 Типичные этапы pipeline:
-
-```text
 Checkout
    ↓
 Setup Environment
@@ -689,11 +495,7 @@ Test
 Delivery
    ↓
 Artifact / Docker Image / Release
-```
-
 Для GUI-проектов дополнительно могут использоваться:
-
-```text
 CGO
    ↓
 Native GUI Dependencies
@@ -701,69 +503,50 @@ Native GUI Dependencies
 Platform-specific Build
    ↓
 Linux / macOS / Windows
-```
-
----
-
-# 🎯 Цели обучения
-
+🎯 Цели обучения
 В рамках этих проектов изучаются:
+- основы DevOps;
+- принцип CI/CD;
+- работа с Git и GitHub;
+- создание GitHub Actions workflows;
+- автоматизация сборки;
+- автоматическое тестирование;
+- статический анализ кода;
+- форматирование исходного кода;
+- создание Docker-образов;
+- multi-stage Docker builds;
+- работа с Docker BuildKit;
+- сохранение артефактов GitHub Actions;
+- публикация Docker-образов в GHCR;
+- публикация бинарных файлов в GitHub Releases;
+- cross-platform сборка приложений;
+- сборка Go GUI-приложений с Fyne;
+- работа с CGO и нативными GUI-зависимостями;
+- передача версии приложения через Git-теги.
+📊 CI-проекты и технологии
+Проект	Язык	Docker	GitHub Actions	Тестирование
+my-first-cicd	—	—	✅	—
+my-python-app	Python	✅	✅	✅
+my-node-app	Node.js	✅	✅	✅
+my-go-app	Go	✅	✅	✅
+my-php-app	PHP	✅	✅	—
+my-cpp-app	C++	✅	✅	✅
+hello-java	Java	✅	✅	✅
+my-rust-app	Rust	✅	✅	✅
 
-* основы DevOps;
-* принцип CI/CD;
-* работа с Git и GitHub;
-* создание GitHub Actions workflows;
-* автоматизация сборки;
-* автоматическое тестирование;
-* статический анализ кода;
-* форматирование исходного кода;
-* создание Docker-образов;
-* multi-stage Docker builds;
-* работа с Docker BuildKit;
-* сохранение артефактов GitHub Actions;
-* публикация Docker-образов в GHCR;
-* публикация бинарных файлов в GitHub Releases;
-* cross-platform сборка приложений;
-* сборка Go GUI-приложений с Fyne;
-* работа с CGO и нативными GUI-зависимостями;
-* передача версии приложения через Git-теги.
 
----
+📦 CD-проекты
+Проект	Платформы / артефакты	Публикация
+hello-rust	Docker image	GHCR
+hello-go-releases	Linux / Windows / macOS	GitHub Releases
+hello-python	Linux / Windows / macOS	GitHub Releases
+hello-dotnet	5 platform binaries	GitHub Releases
+hello-gui	Linux x64 / Windows x64 / macOS ARM64	GitHub Releases
+hex-loader	Linux x64 / Windows x64 / macOS ARM64	GitHub Releases
+arduino-manager	Windows x64	GitHub Releases
 
-# 📊 CI-проекты и технологии
 
-| **Проект**    | **Язык** | **Docker** | **GitHub Actions** | **Тестирование** |
-| ------------- | -------- | ---------- | ------------------ | ---------------- |
-| my-first-cicd | —        | —          | ✅                  | —                |
-| my-python-app | Python   | ✅          | ✅                  | ✅                |
-| my-node-app   | Node.js  | ✅          | ✅                  | ✅                |
-| my-go-app     | Go       | ✅          | ✅                  | ✅                |
-| my-php-app    | PHP      | ✅          | ✅                  | —                |
-| my-cpp-app    | C++      | ✅          | ✅                  | ✅                |
-| hello-java    | Java     | ✅          | ✅                  | ✅                |
-| my-rust-app   | Rust     | ✅          | ✅                  | ✅                |
-
----
-
-# 📦 CD-проекты
-
-| **Проект**        | **Платформы / артефакты**             | **Публикация**  |
-| ----------------- | ------------------------------------- | --------------- |
-| hello-rust        | Docker image                          | GHCR            |
-| hello-go-releases | Linux / Windows / macOS               | GitHub Releases |
-| hello-python      | Linux / Windows / macOS               | GitHub Releases |
-| hello-dotnet      | 5 platform binaries                   | GitHub Releases |
-| hello-gui         | Linux x64 / Windows x64 / macOS ARM64 | GitHub Releases |
-| hex-loader        | Linux x64 / Windows x64 / macOS ARM64 | GitHub Releases |
-
----
-
-# 👨‍💻 Автор
-
-**Артур Любин Александрович (ArthurAleksandrovitch)**
-
-🔗 [GitHub](https://github.com/ArthurAleksandrovitch)
-
----
-
-> 📌 Все проекты являются учебными работами и предназначены для изучения практик CI/CD, контейнеризации и автоматизации разработки.
+👨‍💻 Автор
+Артур Любин Александрович (ArthurAleksandrovitch)
+🔗 GitHub
+📌 Все проекты являются учебными работами и предназначены для изучения практик CI/CD, контейнеризации и автоматизации разработки.
