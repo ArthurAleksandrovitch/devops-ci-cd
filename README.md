@@ -818,6 +818,33 @@ Linux / macOS / Windows
 
 ---
 
+# 🌐 CI/CD (Deploy) — GitHub Pages
+
+Проекты с автоматической проверкой, сборкой и публикацией веб-сайтов через **GitHub Actions** и **GitHub Pages**. После обновления исходного кода сайт разворачивается автоматически.
+
+| **№** | **Проект** | **Технологии** | **Репозиторий** | **Работающий сайт** |
+| ----- | ---------- | -------------- | --------------- | ------------------- |
+| 01 | 🌐 [hello-static](https://github.com/ArthurAleksandrovitch/hello-static) | HTML, CSS, JavaScript, GitHub Actions | [GitHub](https://github.com/ArthurAleksandrovitch/hello-static) | [Открыть сайт](https://arthuraleksandrovitch.github.io/hello-static/) |
+| 02 | ⚛️ [hello-pages](https://github.com/ArthurAleksandrovitch/hello-pages) | React, TypeScript, Vite, GitHub Actions | [GitHub](https://github.com/ArthurAleksandrovitch/hello-pages) | [Открыть сайт](https://arthuraleksandrovitch.github.io/hello-pages/) |
+
+### Этапы CI/CD Deploy
+
+```text
+Push в GitHub
+     ↓
+GitHub Actions
+     ↓
+Проверки и тесты
+     ↓
+Сборка сайта
+     ↓
+GitHub Pages Deploy
+     ↓
+🌐 Публичный сайт
+```
+
+---
+
 # 👨‍💻 Автор
 
 **Артур Любин Александрович (ArthurAleksandrovitch)**
